@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: service-user-client-fegin
+server:
+  port: 9001

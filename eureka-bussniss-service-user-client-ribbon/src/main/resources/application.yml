@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: service-user-ribbon
+server:
+  port: 8901

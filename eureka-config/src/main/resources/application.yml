@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: service-config
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+          - classpath:/shared/ #classpath: 指明配置文件存放路径
+  profiles:
+    active:
+    - native #native: 本地方式
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"

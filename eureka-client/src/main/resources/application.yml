@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: service-eureka-client
+server:
+  port: 8800
