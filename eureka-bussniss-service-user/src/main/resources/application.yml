@@ -9,7 +9,7 @@ spring:
       profile: dev #profile: 此配置为了方便 开发、测试、线上环境的配置文件的切换
       label: master
   rabbitmq:
-      host: localohost
+      host: localhost
       port: 5672
       username: guest
       password: guest
@@ -21,6 +21,5 @@ management:
       cors:
         allowed-origins: "*"
         allowed-methods: "*"
-
-#person:
-#  name:longzhanpeng
+server:
+  port: 8801

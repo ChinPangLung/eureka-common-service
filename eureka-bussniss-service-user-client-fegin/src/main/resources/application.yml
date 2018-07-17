@@ -3,3 +3,6 @@ spring:
     name: service-user-client-fegin
 server:
   port: 9001
+fegin:
+  hystrix:
+     enabled: true

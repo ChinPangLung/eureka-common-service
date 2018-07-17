@@ -1,2 +1,36 @@
+#之所以修改yaml后重启，是因为我们的config是本地的而不是GIT仓库，
+#所以项目没法加载，但是这种方式即使关闭了config，
+#调用过的服务依旧是可以正常使用的，包括旧的配置依旧正常读取使用，Config做了本地缓存
 server:
-  port: 8802
+  time: updateversion1233
+#整合redis实现session共享 start
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+spring:
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 20000
+#    cluster:
+#      nodes: 192.168.211.134:7000,192.168.211.134:7001
+#      -
+#      max-redirects:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+eureka:
+  client:
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+#整合redis实现session共享 end
