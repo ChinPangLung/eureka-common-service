@@ -1,5 +1,6 @@
 package com.example.eurekabussnissserviceuser.web;
 
+import lombok.extern.java.Log;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,10 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Title: UserManagementController
@@ -22,6 +20,7 @@ import java.util.Map;
  **/
 @RestController
 @RefreshScope
+@Log
 public class UserManagementController {
 
     @Value("${server.port}")
@@ -31,7 +30,7 @@ public class UserManagementController {
     String testValue;
 
     @GetMapping("/listUsers")
-    public String ListUsers() {
+    public String ListUsers() throws InterruptedException {
         /**
          * 模拟从数据库查询
          */
@@ -42,11 +41,15 @@ public class UserManagementController {
             user.put("name", "小明" + i);
             users.add(user);
         }
+        int sleepTime = new Random().nextInt(3000);
+        log.info("sleepTime : " + sleepTime);
+        Thread.sleep(sleepTime);
+        log.info("/listUsers, host:"+serverPort);
         return "服务器端口号：   " + serverPort + "   |   用户信息：   " + users.toString();
     }
 
     @GetMapping("/getTestValue")
-    public String getTestValue(){
+    public String getTestValue() {
         return testValue;
     }
 
@@ -56,7 +59,7 @@ public class UserManagementController {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         if (StringUtils.isEmpty(username)) {
-            session.setAttribute("username","testSessionRedis|" + System.currentTimeMillis());
+            session.setAttribute("username", "testSessionRedis|" + System.currentTimeMillis());
         }
         return username;
     }

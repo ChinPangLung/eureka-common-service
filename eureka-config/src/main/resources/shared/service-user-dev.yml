@@ -30,6 +30,9 @@ spring:
         max-idle: 8
         min-idle: 0
 eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 30 #租期到期时间（默认90秒）
+    lease-renewal-interval-in-seconds: 10 #租期更新时间间隔（默认30秒）
   client:
     serviceUrl:
       defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/

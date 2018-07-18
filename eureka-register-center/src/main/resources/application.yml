@@ -14,3 +14,6 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 0
+     # 测试时关闭自我保护机制，保证不可用服务及时踢出 默认打开状态，建议生产环境打开此配置
+    enable-self-preservation: false #（设为false，关闭自我保护主要）
+    eviction-interval-timer-in-ms: 4000 #清理间隔（单位毫秒，默认是60*1000）
