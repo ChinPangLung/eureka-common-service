@@ -1,16 +1,16 @@
 server:
-  port: 8761
+  port: 8763
 spring:
   application:
     name: service-register
 eureka:
   instance:
     prefer-ip-address: false
-    hostname: localhost
+    hostname: peer2
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: true
+    register-with-eureka: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://peer1:8762/eureka/
   server:
     wait-time-in-ms-when-sync-empty: 0

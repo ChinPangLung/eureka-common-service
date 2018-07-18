@@ -6,3 +6,7 @@ server:
 fegin:
   hystrix:
      enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
