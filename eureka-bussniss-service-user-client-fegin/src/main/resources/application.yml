@@ -3,9 +3,10 @@ spring:
     name: service-user-client-fegin
 server:
   port: 9001
+#开启feign熔断
 fegin:
   hystrix:
-     enabled: true
+       enabled: true
 eureka:
   client:
     serviceUrl:

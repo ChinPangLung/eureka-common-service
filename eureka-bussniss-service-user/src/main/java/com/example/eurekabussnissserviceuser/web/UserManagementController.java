@@ -43,7 +43,7 @@ public class UserManagementController {
         }
         int sleepTime = new Random().nextInt(3000);
         log.info("sleepTime : " + sleepTime);
-        Thread.sleep(sleepTime);
+//        Thread.sleep(sleepTime);
         log.info("/listUsers, host:"+serverPort);
         return "服务器端口号：   " + serverPort + "   |   用户信息：   " + users.toString();
     }
