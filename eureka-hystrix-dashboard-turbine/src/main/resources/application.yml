@@ -11,6 +11,6 @@ eureka:
     serviceUrl:
       defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
 turbine:
-  appConfig: service-user-ribbon
+  appConfig: service-user-ribbon,service-user-client-fegin
   clusterNameExpression: new String("default")
-  combineHostPort: false
+  combineHostPort: true
