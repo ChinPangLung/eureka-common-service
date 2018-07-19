@@ -9,15 +9,15 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+//import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
 @EnableHystrix //注解以开启 Hystrix 特性
-@EnableCircuitBreaker //Hystrix仪表盘（ribbon 单服务实例监控）
-@EnableHystrixDashboard //Hystrix仪表盘 （ribbon 单服务实例监控）
+@EnableCircuitBreaker //Hystrix仪表盘 服务熔断（ribbon 单服务实例监控）
+//@EnableHystrixDashboard //Hystrix仪表盘 （ribbon 单服务实例监控）
 public class EurekaBussnissServiceUserClientRibbonApplication {
 
     public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class EurekaBussnissServiceUserClientRibbonApplication {
      * 只要在自己的项目里配置上下面的servlet就可以了
      * @return
      */
-    @Bean
+    /*@Bean
     public ServletRegistrationBean getServlet() {
         HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
         ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
@@ -45,5 +45,5 @@ public class EurekaBussnissServiceUserClientRibbonApplication {
         registrationBean.addUrlMappings("/hystrix.stream");
         registrationBean.setName("HystrixMetricsStreamServlet");
         return registrationBean;
-    }
+    }*/
 }

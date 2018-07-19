@@ -3,11 +3,16 @@ spring:
     name: service-user-client-fegin
 server:
   port: 9001
-#开启feign熔断
-fegin:
-  hystrix:
-       enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
 eureka:
   client:
     serviceUrl:
       defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
+feign:
+  hystrix:
+    enabled: true
+#这个鬼设置需要在最后才会生效
