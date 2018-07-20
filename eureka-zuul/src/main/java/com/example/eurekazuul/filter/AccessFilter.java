@@ -7,6 +7,8 @@ import lombok.extern.java.Log;
 import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @Title: AccessFilter
@@ -57,6 +59,15 @@ public class AccessFilter extends ZuulFilter {
             log.warning("access token is empty");
             currentContext.setSendZuulResponse(false);
             currentContext.setResponseStatusCode(401);
+            try {
+                HttpServletResponse response = currentContext.getResponse();
+                response.setCharacterEncoding("utf-8");  //设置字符集
+                response.setContentType("text/html; charset=utf-8"); //设置相应格式
+                response.getWriter().write("token 验证失败");
+            } catch (IOException e) {
+                log.info("response io异常");
+                e.printStackTrace();
+            }
             return null;
         }
         return null;

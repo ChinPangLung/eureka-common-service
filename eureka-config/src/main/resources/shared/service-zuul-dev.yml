@@ -9,7 +9,8 @@ zuul:
     ribbon-service: #自定义名称
       path: /ribbon/**
       serviceId: service-user-ribbon #/ribbon/开头的路径转发至service-user-ribbon微服务
-      #sensitiveHeaders: "*" #springcloud项目中经过网关zuul转发请求后发生session失效问题，这是由于zuul默认会丢弃原来的session并生成新的session，解决方法网关配置文件
+      sensitiveHeaders: true #springcloud项目中经过网关zuul转发请求后发生session失效问题，这是由于zuul默认会丢弃原来的session并生成新的session
+      #所以这里对制定的路由开启自定义敏感头。除了设置为true，也可以设置为空。zuul.sensitiveHeaders= 只是全局设置的做法。不推荐！破坏了默认设置的用意
 hystrix: #hystrix配置
   command:
     default:
