@@ -1,3 +1,4 @@
+/*
 package com.example.eurekazuul.Provider;
 
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
@@ -11,19 +12,21 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+*/
 /**
  * @Title: UserFallbackProvider
  * @Author: long-zp
  * @Date: 2018/7/17 11:43
  * @version: V1.0
  * @Description: Created with IntelliJ IDEA.
- **/
+ **//*
+
 @Component
 public class UserFallbackProvider implements FallbackProvider {
 
     @Override
     public String getRoute() {
-        return "service-user";
+        return "service-user-ribbon";
     }
 
     @Override
@@ -63,3 +66,4 @@ public class UserFallbackProvider implements FallbackProvider {
         };
     }
 }
+*/
