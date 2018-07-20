@@ -20,8 +20,13 @@ public class EurekaZuulApplication {
         SpringApplication.run(EurekaZuulApplication.class, args);
     }
 
-    @Bean
+    /**
+     * 启用过滤器功能
+     *
+     * @return
+     */
+   /* @Bean
     public AccessFilter accessFilter() {
         return new AccessFilter();
-    }
+    }*/
 }
