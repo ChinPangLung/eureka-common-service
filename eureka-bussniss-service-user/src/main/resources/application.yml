@@ -1,25 +1,5 @@
 spring:
   application:
     name: service-user
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: service-config #service-id ： 指向配置中心的 微服务名，这样就实现了高可用
-      profile: dev #profile: 此配置为了方便 开发、测试、线上环境的配置文件的切换
-      label: master
-  rabbitmq:
-      host: localhost
-      port: 5672
-      username: guest
-      password: guest
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-      cors:
-        allowed-origins: "*"
-        allowed-methods: "*"
 server:
   port: 8802
