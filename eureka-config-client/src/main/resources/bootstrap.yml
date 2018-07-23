@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      profile: prod #dev开发环境配置文件，test测试环境配置文件，pro正式环境文件
+      label: master #git仓库对应的分支名称 config-label-test
+      uri: http://localhost:7001/ #config-server
+      name: didispace
