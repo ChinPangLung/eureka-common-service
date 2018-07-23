@@ -3,4 +3,3 @@ spring:
     name: config-server-git
 server:
   port: 7001
-
