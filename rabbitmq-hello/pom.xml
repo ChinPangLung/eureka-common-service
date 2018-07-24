@@ -27,6 +27,7 @@
 
     <dependencies>
 
+        <!--这里的依赖包是spring-boot整合RabbitMQ的-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
