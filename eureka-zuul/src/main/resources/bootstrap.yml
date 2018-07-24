@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    config:
+      profile: dev #dev开发环境配置文件，test测试环境配置文件，pro正式环境文件
+      label: master #git仓库对应的分支名称 config-label-test
+#      label: config-label-test #git仓库对应的分支名称 config-label-test
+#      uri: http://localhost:7001/ #config-server
+      name: service-zuul
+      discovery:
+        serviceId: config-server-git #基于服务注册发现的方式查找
+        enabled: true
+      username: user #添加security依赖添加安全保护 获取该配置中心需要验证账号和密码。对应eureka-config-git配置文件
+      password: 123456
+eureka:
+  client:
+      serviceUrl:
+        defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
+management: #配置暴露监控节点地址
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+#注册中心eureka.client.service-url.defaultZone = 一定要放在boostrap文件中，不然启动会报错
