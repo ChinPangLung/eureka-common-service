@@ -40,7 +40,11 @@ public class UserManagementRibbonClient {
         long start = System.currentTimeMillis();
         String result = this.restTemplate.getForObject("http://service-user/listUsers", String.class);
         long end = System.currentTimeMillis();
-        log.info("Spend Time ："+(end-start));
+        log.info("Spend Time ：" + (end - start));
+        /**
+         * 整合springcloud Sleuth 测试输出
+         */
+        log.info("=================tarce-1==============");
         return result;
     }
 
