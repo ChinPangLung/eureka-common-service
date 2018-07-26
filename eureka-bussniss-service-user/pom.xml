@@ -68,6 +68,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!--整合springCloud seluth -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

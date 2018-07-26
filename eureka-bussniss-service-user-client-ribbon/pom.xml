@@ -47,6 +47,12 @@
             <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
         </dependency>-->
 
+        <!--整合springCloud seluth -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+
         <!--监控中心-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
