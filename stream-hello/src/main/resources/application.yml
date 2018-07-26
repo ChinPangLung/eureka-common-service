@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          group: group-a #多个相同的实例启动的情况下，通过该属性分组，以实现多个应用收到消息后，只有一个应用真正的接收消息并且处理
+  rabbitmq:
+    password: 123456
+    host: localhost
+    username: springCloud
+    port: 5672
+  application:
+    name: stream-hello
+server:
+  port: 5002
