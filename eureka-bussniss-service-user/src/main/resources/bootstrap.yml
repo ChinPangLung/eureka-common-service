@@ -11,6 +11,11 @@ spring:
         enabled: true
       username: user #添加security依赖添加安全保护 获取该配置中心需要验证账号和密码。对应eureka-config-git配置文件
       password: 123456
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch # elasticsearch集群名称，默认的是elasticsearch
+      cluster-nodes: 127.0.0.1:9300 #节点的地址 注意api模式下端口号是9300，千万不要写成9200
+      repositories: true #是否开启本地存储
 eureka:
   client:
       serviceUrl:
