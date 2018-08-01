@@ -22,7 +22,7 @@ public class AccessFilter extends ZuulFilter {
     @Override
     public String filterType() {
         /**
-         * pre 代表在ing求被路由前执行
+         * pre 代表请求被路由前执行
          */
         return "pre";
     }
