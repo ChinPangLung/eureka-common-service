@@ -23,7 +23,10 @@ public class SenderTest {
     private Sender sender;
 
     @Test
-    public void hello() {
-        sender.send();
+    public void hello() throws InterruptedException {
+        for (int i = 0; i < 10; i++) {
+            sender.send();
+            Thread.sleep(3000);
+        }
     }
 }

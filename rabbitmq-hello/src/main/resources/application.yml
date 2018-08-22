@@ -6,4 +6,3 @@ spring:
     username: springCloud
     password: 123456
     port: 5672
-#配置RabbitMq的链接信息
