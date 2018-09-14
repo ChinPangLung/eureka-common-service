@@ -5,13 +5,13 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ChinPangLung/config-repo #git²Ö¿âµÄµØÖ·£»file://${user.name}/config-repoÕâÊÇ±¾µØÎÄ¼şÂ·¾¶ÅäÖÃµÄ·½Ê½£¬Ö»ÏŞÓÚÓÃÓÚ¿ª·¢Ê¹ÓÃ
+          uri: https://github.com/ChinPangLung/config-repo #gitä»“åº“çš„åœ°å€ï¼›file://${user.name}/config-repoè¿™æ˜¯æœ¬åœ°æ–‡ä»¶è·¯å¾„é…ç½®çš„æ–¹å¼ï¼Œåªé™äºç”¨äºå¼€å‘ä½¿ç”¨
           searchPaths: spring_cloud_in_action/config-repo
-          username: ************ #ÕâÀï¶ÔÓ¦²Ö¿âµØÖ·µÄÕËºÅÃÜÂë
+          username: ************ #è¿™é‡Œå¯¹åº”ä»“åº“åœ°å€çš„è´¦å·å¯†ç 
           password: ************
       discovery:
         enabled: true
-  security: # Ìí¼ÓsecurityÒÀÀµÌí¼Ó°²È«±£»¤ ÆäËû·şÎñ»ñÈ¡¸ÃÅäÖÃÖĞĞÄĞèÒªÑéÖ¤ÕËºÅ¡£Èç¹û²»ĞèÒªÑéÖ¤°ÑÏÂÃæµÄÈ¥µô¾Í¿ÉÒÔ
+  security: # æ·»åŠ securityä¾èµ–æ·»åŠ å®‰å…¨ä¿æŠ¤ å…¶ä»–æœåŠ¡è·å–è¯¥é…ç½®ä¸­å¿ƒéœ€è¦éªŒè¯è´¦å·ã€‚å¦‚æœä¸éœ€è¦éªŒè¯æŠŠä¸‹é¢çš„å»æ‰å°±å¯ä»¥
     user:
       name: user
       password: 123456
@@ -19,5 +19,5 @@ server:
   port: 7001
 eureka:
   client:
-      serviceUrl:
-        defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
+    serviceUrl:
+      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
