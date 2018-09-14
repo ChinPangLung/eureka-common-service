@@ -7,8 +7,8 @@ spring:
         git:
           uri: https://github.com/ChinPangLung/config-repo #git仓库的地址；file://${user.name}/config-repo这是本地文件路径配置的方式，只限于用于开发使用
           searchPaths: spring_cloud_in_action/config-repo
-          username: ************ #这里对应仓库地址的账号密码
-          password: ************
+          username: .......... #这里对应仓库地址的账号密码
+          password: ..........
       discovery:
         enabled: true
   security: # 添加security依赖添加安全保护 其他服务获取该配置中心需要验证账号。如果不需要验证把下面的去掉就可以
