@@ -61,12 +61,12 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.1.1</version>
                 <configuration>
-                    <imageName>itmuch/eureka-register-center:0.0.1</imageName><!--指定镜像名，其中chinpanglung是仓库名称，eureka-register-center是镜像名称,0.0.1是标签名称-->
+                    <imageName>chinpanglung/eureka-register-center:0.0.1</imageName><!--指定镜像名，其中chinpanglung是仓库名称，eureka-register-center是镜像名称,0.0.1是标签名称-->
                     <baseImage>java</baseImage><!--用于指定基础镜像，类似于Dockerfile中的FROM指令-->
                     <entryPoint>["java","-jar","/${project.build.finalName}.jar"]</entryPoint><!--类似与Dockerfile中的ENTRYPOINT-->
                     <resources>
                         <resource>
-                            <target>/</target>
+                            <targetPath>/</targetPath>
                             <directory>${project.build.directory}</directory><!--用于指定需要复制的根目录，project.build.directory表示是target-->
                             <include>${project.build.finalName}.jar</include><!--用于指定需要复制的文件，${project.build.finalName}.jar表示打包后的jar文件-->
                         </resource>
