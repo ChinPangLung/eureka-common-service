@@ -73,6 +73,24 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.1.1</version>
+                <configuration>
+                    <imageName>chinpanglung/eureka-config-git:0.0.1</imageName><!--指定镜像名，其中chinpanglung是仓库名称，eureka-config-git是镜像名称,0.0.1是标签名称-->
+                    <!--<dockerDirectory>${project.basedir}/src/main/docker/Dockerfile</dockerDirectory>-->
+                    <baseImage>java</baseImage>
+                    <entryPoint>["java","-jar","/${project.build.finalName}.jar"]</entryPoint>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory><!--用于指定需要复制的根目录，project.build.directory表示是target-->
+                            <include>${project.build.finalName}.jar</include><!--用于指定需要复制的文件，${project.build.finalName}.jar表示打包后的jar文件-->
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
